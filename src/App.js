@@ -1,23 +1,25 @@
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Robot from './components/Robot';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { navLists } from './utils/constants';
+import { navItems } from './utils/constants';
+// import Asia from './components/nav/Asia';
+// import Europe from './components/nav/Europe';
 
 function App() {
+  const renderRoutes = (items) => {
+    return items.map((item) => (
+      <Route key={item.id} path={item.path} element={item.element}>
+        {item.children && renderRoutes(item.children)}
+      </Route>
+    ));
+  };
   return (
     <Router>
       <div className="App">
         <Navbar />
         {/* <Header /> */}
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/robot" element={<Robot />} />
-          <Route path="/" element={<Home />} /> {/* 默认路由 */}
-          {/* {navLists.map(item=><Route path={`/${item.link}`} element={}/>)} */}
-        </Routes>
+        <Routes>{renderRoutes(navItems)}</Routes>
       </div>
     </Router>
   );
