@@ -19,7 +19,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <ul className="flex justify-start space-x-4">
+          <ul className="hidden md:flex justify-start space-x-4">
             {navItems.map((item) => (
               <NavItemComponent key={item.id} item={item} />
             ))}
@@ -77,12 +77,13 @@ const NavItemComponent = ({ item }) => {
       <Link
         to={item.path}
         onClick={toggleExpand}
-        className="flex items-center p-2 hover:bg-gray-100"
+        className="flex items-center p-2 hover:text-picton-blue-600 "
+        aria-expanded={isExpanded}
       >
         {item.icon && <span className="mr-2">{item.icon}</span>}
         <span>{item.title}</span>
         {item.children && (
-          <span className="ml-2">{isExpanded ? '▼' : '▶'}</span>
+          <span className="ml-1">{isExpanded ? '▼' : '▶'}</span>
         )}
       </Link>
       {item.children && (
