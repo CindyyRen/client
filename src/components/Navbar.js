@@ -89,7 +89,7 @@ const NavItemComponent = ({ item }) => {
       {item.children && (
         <ul
           className={`
-          absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-10
+          absolute left-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-1000
           ${isExpanded ? 'block' : 'hidden'}
         `}
         >

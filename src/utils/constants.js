@@ -17,20 +17,20 @@ export const navItems = [
     title: 'Universities',
     path: '/universities',
     element: <Universities />,
-    children: [
-      {
-        id: 21,
-        title: 'Asia-universities',
-        path: '/universities/asia',
-        element: <Asia />,
-      },
-      {
-        id: 22,
-        title: 'Europe-universities',
-        path: '/universities/europe',
-        element: <Europe />,
-      },
-    ],
+    // children: [
+    //   {
+    //     id: 21,
+    //     title: 'Asia-universities',
+    //     path: '/universities/asia',
+    //     element: <Asia />,
+    //   },
+    //   {
+    //     id: 22,
+    //     title: 'Europe-universities',
+    //     path: '/universities/europe',
+    //     element: <Europe />,
+    //   },
+    // ],
   },
   {
     id: 3,
